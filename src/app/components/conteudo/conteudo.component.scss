@@ -8,6 +8,7 @@
 .card {
   border: 1px solid #ddd; /* Adiciona uma borda leve aos cards */
   border-radius: 0.25rem; /* Ajusta o arredondamento dos cantos */
+
 }
 
 /* Ajuste o tamanho da imagem do card */
@@ -19,10 +20,55 @@
 .card-img-top {
   width: 100%;
   height: auto;
+
 }
 
 .custom-card {
   max-width: 200px; /* Ajuste o valor conforme necessário */
   margin: 0 auto; /* Centraliza o card */
   margin-bottom: 50px;
+
+
 }
+
+
+//
+
+/* conteudo.component.scss */
+
+/* Camada de sobreposição */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Escurece o fundo para destacar o formulário */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* Garante que o formulário fique acima de outros elementos */
+}
+
+/* Estilo para o formulário */
+.form-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px; /* Define a largura máxima do formulário */
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste o tamanho dos botões se necessário */
+.btn {
+  margin-right: 10px;
+}
+
+
+.container{
+  background-color: rgba(128, 124, 124, 0.027);
+}
+
+//
+

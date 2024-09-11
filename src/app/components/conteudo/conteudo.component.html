@@ -3,101 +3,102 @@
   <!-- Container principal -->
   <div class="row">
     <div class="col-lg-12 text-center">
-      <!-- Centralizando o container -->
+      <div class="container">
+        <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark mt-3 mb-5 shadow p-2" style="background-color: #131516">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
 
-      <!-- Container menor para cards -->
-      <div class="container-sm">
-        <div class="row">
+          <!-- Navbar brand -->
+          <a class="navbar-brand" href="#">Categories:</a>
 
-          <!-- Card 1 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card custom-card">
-              <img src="https://m.media-amazon.com/images/I/81jqGtBE2qL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Chicago Skyscrapers"/>
-              <div class="card-body">
-                <a href="#" class="card-link">É assim que acaba</a>
-              </div>
-            </div>
+          <!-- Toggle button -->
+          <button
+             class="navbar-toggler"
+             type="button"
+             data-mdb-toggle="collapse"
+             data-mdb-target="#navbarSupportedContent2"
+             aria-controls="navbarSupportedContent2"
+             aria-expanded="false"
+             aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              <!-- Link -->
+              <li class="nav-item acitve">
+                <a class="nav-link text-white" href="#">All</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Shirts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Sport wears</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Outwears</a>
+                  </li>
+
+            </ul>
+            <button type="button" class="btn btn-primary" (click)="enviarLivro()" mdbRipple>Novo Livro</button>
+
+            <!-- Search -->
+
+
           </div>
-
-
-           <!-- Card 2 -->
-           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card custom-card">
-
-              <img src="https://m.media-amazon.com/images/I/917iVfhEhxL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="Chicago Skyscrapers"/>
-              <div class="card-body">
-                <a href="#" class="card-link">Verity</a>
-              </div>
-            </div>
-          </div>
-
-
-           <!-- Card 3 -->
-           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card custom-card">
-
-              <img src="https://m.media-amazon.com/images/I/81LwXqWogKL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Chicago Skyscrapers"/>
-              <div class="card-body">
-                <a href="#" class="card-link">Rei da ira</a>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Card 2 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card custom-card">
-
-              <img src="https://m.media-amazon.com/images/I/917iVfhEhxL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="Chicago Skyscrapers"/>
-              <div class="card-body">
-                <a href="#" class="card-link">Verity</a>
-              </div>
-            </div>
-          </div>
-
-
-
-          <!-- Card 2 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card custom-card">
-
-              <img src="https://m.media-amazon.com/images/I/917iVfhEhxL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="Chicago Skyscrapers"/>
-              <div class="card-body">
-                <a href="#" class="card-link">Verity</a>
-              </div>
-            </div>
-          </div>
-
-
-
-          <!-- Card 2 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card custom-card">
-
-              <img src="https://m.media-amazon.com/images/I/917iVfhEhxL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="Chicago Skyscrapers"/>
-              <div class="card-body">
-                <a href="#" class="card-link">Verity</a>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Card 2 -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card custom-card">
-
-              <img src="https://m.media-amazon.com/images/I/917iVfhEhxL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="Chicago Skyscrapers"/>
-              <div class="card-body">
-                <a href="#" class="card-link">Verity</a>
-              </div>
-            </div>
-          </div>
-
-
         </div>
-        <!-- Fim da row -->
-      </div>
-      <!-- Fim do container menor -->
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+
+      <!-- Products -->
+        <section>
+        <div class="text-center">
+          <div class="row">
+
+
+
+
+            @for (livro of livros; track $index) {
+              <!-- Card 1 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card custom-card">
+                <img src="{{livro.imagemUrl}}" class="card-img-top" alt="{{livro.titulo}}"/>
+                <div class="card-body">
+                  <a href="#" class="card-link">{{livro.titulo}}</a>
+                </div>
+              </div>
+            </div>
+          }
+
+
+          <!-- Formulário para adicionar novo livro -->
+          <div *ngIf="showForm" class="overlay">
+            <div class="form-container">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Adicionar novo livro</h5>
+                  <form (ngSubmit)="salvarLivro()">
+                    <div class="mb-3">
+                      <label for="titulo" class="form-label">Titulo</label>
+                      <input type="text" id="titulo" class="form-control" [(ngModel)]="livrosEdit.titulo" name="titulo" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="imagemUrl" class="form-label">Imagem URL</label>
+                      <input type="text" id="imagemUrl" class="form-control" [(ngModel)]="livrosEdit.imagemUrl" name="imagemUrl" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-secondary" (click)="showForm = false">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
     </div>
-  </div>
-</div>
+
