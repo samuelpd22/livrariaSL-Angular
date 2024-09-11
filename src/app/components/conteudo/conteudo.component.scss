@@ -1,0 +1,28 @@
+/* Ajuste o tamanho do container */
+.container-sm {
+  max-width: 800px; /* Ajuste o valor conforme necessário */
+  margin: 0 auto;   /* Centraliza o container horizontalmente */
+}
+
+/* Ajuste o tamanho dos cards */
+.card {
+  border: 1px solid #ddd; /* Adiciona uma borda leve aos cards */
+  border-radius: 0.25rem; /* Ajusta o arredondamento dos cantos */
+}
+
+/* Ajuste o tamanho da imagem do card */
+.card-img-top {
+  height: 300px; /* Ajuste a altura conforme necessário */
+
+  object-fit: inherit; /* Garante que a imagem cubra o card sem distorção */
+}
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.custom-card {
+  max-width: 200px; /* Ajuste o valor conforme necessário */
+  margin: 0 auto; /* Centraliza o card */
+  margin-bottom: 50px;
+}
