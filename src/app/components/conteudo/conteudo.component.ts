@@ -4,13 +4,17 @@ import { LivrosServiceService } from '../../service/livros-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, } from '@angular/forms';  // Importe o FormsModule
 import { CommonModule } from '@angular/common';  // Importar CommonModule para ngIf
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+
+
 
 
 
 @Component({
   selector: 'app-conteudo',
   standalone: true,
-  imports: [HttpClientModule,FormsModule,CommonModule ],
+  imports: [HttpClientModule,FormsModule,CommonModule ,MdbCollapseModule,MdbFormsModule],
   templateUrl: './conteudo.component.html',
   styleUrl: './conteudo.component.scss'
 })
@@ -21,7 +25,7 @@ export class ConteudoComponent {
 
 
   livros: Livros[]=[];
-  livrosEdit: Livros = new Livros(0,"","");
+  livrosEdit: Livros = new Livros(0,"","","");
 
   livrosService = inject(LivrosServiceService);//@Autowired
 
@@ -30,8 +34,9 @@ export class ConteudoComponent {
     this.listAll();
 
 
-     let livroNovo = history.state.livroNovo;
-     let livroEditado = history.state.livroEditado;
+    const livroNovo = history.state?.livroNovo; // Use o operador de encadeamento opcional
+    const livroEditado = history.state?.livroEditado; // Use o operador de encadeamento opcional
+
 
      if(livroNovo){
       livroNovo.id = 555;
@@ -58,6 +63,20 @@ export class ConteudoComponent {
      });
   };
 
+  listGenero(genero:string){
+    this.livrosService.listGender(genero).subscribe({
+      next:lista => { //QUANDO DER CERTO
+        this.livros = lista;
+        console.log(lista)
+
+      },
+      error: err => { //QUANDO OCORRER ERRO
+
+        console.log("erro de depuração");
+      }
+    });
+ };
+
   enviarLivro() {
     this.showForm = true; // Exibe o formulário
   }
@@ -78,6 +97,8 @@ export class ConteudoComponent {
       alert("Por favor, preencha todos os campos");
     }
   }
+
+
 }
 
 

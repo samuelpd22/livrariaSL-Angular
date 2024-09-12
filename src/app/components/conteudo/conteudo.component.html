@@ -30,20 +30,25 @@
 
               <!-- Link -->
               <li class="nav-item acitve">
-                <a class="nav-link text-white" href="#">All</a>
+                <button type="button" class="btn btn-tertiary" (click)="listAll()" mdbRipple>Todos</button>
               </li>
               <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Shirts</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Sport wears</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Outwears</a>
-                  </li>
-
+                <button type="button" class="btn btn-tertiary" (click)="listGenero('ROMANCE')" mdbRipple>Romance</button>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="btn btn-tertiary" (click)="listGenero('FANTASIA')" mdbRipple>Fantasia</button>
+              </li>
             </ul>
+
+
+
+
+
+
+
             <button type="button" class="btn btn-primary" (click)="enviarLivro()" mdbRipple>Novo Livro</button>
+
+
 
             <!-- Search -->
 
@@ -62,18 +67,19 @@
 
 
 
-            @for (livro of livros; track $index) {
+          @for (livro of livros; track $index) {
               <!-- Card 1 -->
             <div class="col-md-6 col-lg-4 mb-4">
               <div class="card custom-card">
                 <img src="{{livro.imagemUrl}}" class="card-img-top" alt="{{livro.titulo}}"/>
                 <div class="card-body">
                   <a href="#" class="card-link">{{livro.titulo}}</a>
+
                 </div>
+
               </div>
             </div>
           }
-
 
           <!-- Formulário para adicionar novo livro -->
           <div *ngIf="showForm" class="overlay">
@@ -90,8 +96,14 @@
                       <label for="imagemUrl" class="form-label">Imagem URL</label>
                       <input type="text" id="imagemUrl" class="form-control" [(ngModel)]="livrosEdit.imagemUrl" name="imagemUrl" required>
                     </div>
+
+                    <div class="mb-3">
+                      <label for="imagemUrl" class="form-label">Gênero</label>
+                      <input type="text" id="imagemUrl" class="form-control" [(ngModel)]="livrosEdit.genero" name="genero" required>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Salvar</button>
-                    <button type="button" class="btn btn-secondary" (click)="showForm = false">Cancel</button>
+                    <button type="button" class="btn btn-secondary" (click)="showForm = false">Cancelar</button>
                   </form>
                 </div>
               </div>
