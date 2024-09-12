@@ -13,11 +13,16 @@ export class LivrosServiceService {
 
    API = "http://localhost:8080/livros";
 
+
+
    constructor() { }
 
    listAll(): Observable<Livros[]>{ //Metodo @GETMapping
      return this.http.get<Livros[]>(this.API);
    }
+   listGender(genero:string): Observable<Livros[]>{ //Metodo @GETMapping
+    return this.http.get<Livros[]>(this.API +"/genero/" + genero);
+  }
 
 
    save(livro:Livros): Observable<string>{ //Metodo @PostMapping
