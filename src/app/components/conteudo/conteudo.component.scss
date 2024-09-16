@@ -3,11 +3,16 @@
   max-width: 800px; /* Ajuste o valor conforme necessário */
   margin: 0 auto;   /* Centraliza o container horizontalmente */
 }
+h5{
+  text-align: center;
+  align-items: center;
+}
 
 /* Ajuste o tamanho dos cards */
 .card {
   border: 1px solid #ddd; /* Adiciona uma borda leve aos cards */
   border-radius: 0.25rem; /* Ajusta o arredondamento dos cantos */
+  max-width: 470px;
 
 }
 
@@ -26,7 +31,7 @@
 .custom-card {
   max-width: 200px; /* Ajuste o valor conforme necessário */
   margin: 0 auto; /* Centraliza o card */
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
 
 
@@ -69,6 +74,7 @@
 
 .container{
   background-color: rgba(26, 24, 24, 0.034);
+
 }
 
 //
@@ -95,6 +101,47 @@
 .nav-item button:focus {
   outline: none; /* Remover o contorno ao focar */
 }
+
+// container ao clicar no livro
+
+
+/* Overlay para escurecer o fundo *//* Overlay para escurecer o fundo */
+
+
+/* Container branco maior */
+.details-container {
+  position: relative; /* Necessário para posicionar o botão de fechar */
+  background-color: #ffffff98;
+  border-radius: 1rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 2rem; /* Maior espaço interno */
+  max-width: 100%;
+  height: auto; /* Permite que o container se ajuste conforme o conteúdo */
+  min-width: 300px; /* Define uma largura mínima para evitar que o card fique muito pequeno */
+  box-sizing: border-box;
+}
+
+
+/* Ícone de fechar no topo direito */
+.btn-close {
+  position: absolute;
+  top: 1rem; /* Ajuste conforme necessário */
+  right: 0.5rem; /* Ajuste conforme necessário */
+  border: none;
+  font-size: 0.2; /* Ajuste o tamanho do ícone conforme necessário */
+  cursor: pointer;
+  color: #000000bd; /* Cor do ícone */
+}
+
+// Cor do titulo 
+.custom-title {
+  color: #55381dc2; /* Cor personalizada do texto */
+  font-weight: bold; /* Peso da fonte */
+  border-bottom: 2px solid #55381d8e; /* Linha abaixo do título */
+  padding-bottom: 0.5rem; /* Espaçamento entre o texto e a linha */
+  margin-bottom: 0.5rem; /* Espaçamento entre a linha e o próximo elemento */
+}
+
 
 
 

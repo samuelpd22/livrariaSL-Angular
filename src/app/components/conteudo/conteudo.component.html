@@ -1,3 +1,8 @@
+
+<br>
+
+
+
 <br>
 <div class="container">
   <!-- Container principal -->
@@ -38,6 +43,9 @@
               <li class="nav-item">
                 <button type="button" class="btn btn-tertiary" (click)="listGenero('FANTASIA')" mdbRipple>Fantasia</button>
               </li>
+              <li class="nav-item">
+                <button type="button" class="btn btn-tertiary" (click)="listGenero('MISTERIO')" mdbRipple>Misterio</button>
+              </li>
             </ul>
 
 
@@ -71,17 +79,58 @@
               <!-- Card 1 -->
             <div class="col-md-6 col-lg-4 mb-4">
               <div class="card custom-card">
-                <img src="{{livro.imagemUrl}}" class="card-img-top" alt="{{livro.titulo}}"/>
-                <div class="card-body">
-                  <a href="#" class="card-link">{{livro.titulo}}</a>
 
+                <span class="badge badge-primary">
+                  <img src="{{livro.imagemUrl}}" class="card-img-top" alt="{{livro.titulo}}"/>
+                </span>
+                <div class="card-body">
+                  <a href="#" class="card-link" (click)="showBookDetails(livro.id)">
+                    {{livro.titulo}}</a>
+
+
+                    
                 </div>
 
               </div>
             </div>
           }
 
-          <!-- Formulário para adicionar novo livro -->
+
+    
+         <!-- -------------------------------APARECE APENAS SE CLICAR NO LIVRO-------------------------------------------->
+          
+         <div *ngIf="selectedBook" class="overlay">
+          <!-- Container branco maior para o card de detalhes -->
+          <div class="details-container">
+            <!-- Ícone de fechar no topo direito -->
+            <button type="button" class="btn-close" (click)="closeBookDetails()" aria-label="Fechar"></button>
+            
+            <div class="card">
+              <!-- Card content -->
+              <div class="card-body">
+
+                
+                <h5 class="custom-title">{{selectedBook.titulo}}</h5>
+                <p>Sinopse</p>
+                <p>{{selectedBook.sinopse}}</p>
+              </div>
+              <div class="card-footer bg-light">
+                <a href="{{selectedBook.linkLivro}}" target="_blank">
+                  <p>Adquira                 <span><i class="fas fa-shopping-cart"></i></span>
+                  </p>
+                </a>
+                {{selectedBook.valor}}
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- -------------------------------APARECE APENAS SE CLICAR NO LIVRO-------------------------------------------->
+
+         
+
+          <!--------------------------------Formulário para adicionar novo livro------------------------------------------------------------->
           <div *ngIf="showForm" class="overlay">
             <div class="form-container">
               <div class="card">
@@ -102,6 +151,21 @@
                       <input type="text" id="imagemUrl" class="form-control" [(ngModel)]="livrosEdit.genero" name="genero" required>
                     </div>
 
+                    <div class="mb-3">
+                      <label for="sinopse" class="form-label">Sinopse</label>
+                      <input type="text" id="sinopse" class="form-control" [(ngModel)]="livrosEdit.sinopse" name="sinopse" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="linkLivro" class="form-label">Link do livro</label>
+                      <input type="text" id="linkLivro" class="form-control" [(ngModel)]="livrosEdit.linkLivro" name="linkLivro" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="valor" class="form-label">Valor R$</label>
+                      <input type="text" id="valor" class="form-control" [(ngModel)]="livrosEdit.valor" name="genero" required>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Salvar</button>
                     <button type="button" class="btn btn-secondary" (click)="showForm = false">Cancelar</button>
                   </form>
@@ -109,6 +173,7 @@
               </div>
             </div>
           </div>
+          <!--------------------------------Formulário para adicionar novo livro------------------------------------------------------------->
 
           </div>
 

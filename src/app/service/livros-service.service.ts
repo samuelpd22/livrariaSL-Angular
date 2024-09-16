@@ -24,6 +24,10 @@ export class LivrosServiceService {
     return this.http.get<Livros[]>(this.API +"/genero/" + genero);
   }
 
+  getById(id:number): Observable<Livros>{
+    return this.http.get<Livros>(this.API + "/pegar/"+ id );
+  }
+
 
    save(livro:Livros): Observable<string>{ //Metodo @PostMapping
      return this.http.post<string>(this.API+"/enviar", livro  ,{ responseType: 'text' as 'json'})//Retorno string? Sempre usar responseType

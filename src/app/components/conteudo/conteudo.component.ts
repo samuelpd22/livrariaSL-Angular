@@ -6,6 +6,8 @@ import { FormsModule, } from '@angular/forms';  // Importe o FormsModule
 import { CommonModule } from '@angular/common';  // Importar CommonModule para ngIf
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+
 
 
 
@@ -14,18 +16,21 @@ import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 @Component({
   selector: 'app-conteudo',
   standalone: true,
-  imports: [HttpClientModule,FormsModule,CommonModule ,MdbCollapseModule,MdbFormsModule],
+  imports: [HttpClientModule,FormsModule,CommonModule ,MdbCollapseModule,MdbFormsModule,MdbCarouselModule],
   templateUrl: './conteudo.component.html',
   styleUrl: './conteudo.component.scss'
 })
 export class ConteudoComponent {
 
 
-  showForm: boolean = false; // Variável para controlar a exibição do formulário
+
+  selectedBook: any = null; // Livro selecionado para mostrar detalhes
+
+  showForm = false; // Controle do formulário para adicionar livro
 
 
   livros: Livros[]=[];
-  livrosEdit: Livros = new Livros(0,"","","");
+  livrosEdit: Livros = new Livros(0,"","","","","","");
 
   livrosService = inject(LivrosServiceService);//@Autowired
 
@@ -99,6 +104,18 @@ export class ConteudoComponent {
   }
 
 
+//
+// Função para mostrar detalhes do livro
+showBookDetails(livroId: number) {
+  this.livrosService.getById(livroId).subscribe(data => {
+    this.selectedBook = data;
+  });
+}
+
+// Função para fechar o card de detalhes
+closeBookDetails() {
+  this.selectedBook = null;
+}
 }
 
 
