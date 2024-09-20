@@ -19,7 +19,8 @@ h5{
 /* Ajuste o tamanho da imagem do card */
 .card-img-top {
   height: 300px; /* Ajuste a altura conforme necessário */
-  object-fit: inherit; /* Garante que a imagem cubra o card sem distorção */
+  object-fit: scale-down ; /* Garante que a imagem cubra o card sem distorção */
+  background-color: rgba(102, 98, 98, 0);//ALTERA FUNDO DO CARD -IMG
 }
 
 /*.card-img-top {
@@ -29,6 +30,7 @@ h5{
 }*/
 
 .custom-card {
+  
   max-width: 200px; /* Ajuste o valor conforme necessário */
   margin: 0 auto; /* Centraliza o card */
   margin-bottom: 20px;
@@ -36,6 +38,7 @@ h5{
 
 
 }
+
 
 
 //
@@ -146,3 +149,8 @@ h5{
 
 
 
+.card-footer {
+  font-size: 13px;
+  padding: 0;
+  text-align: center;
+}

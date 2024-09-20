@@ -9,65 +9,55 @@
   <div class="row">
     <div class="col-lg-12 text-center">
       <div class="container">
-        <!-- Navbar -->
+        
+    
+      <!------------------------------------Navbar---------------------------------------------------->
+
       <nav class="navbar navbar-expand-lg navbar-dark mt-3 mb-5 shadow p-2" style="background-color: #131516">
-        <!-- Container wrapper -->
         <div class="container-fluid">
+          <a class="navbar-brand" href="#">Categorias:</a>
 
-          <!-- Navbar brand -->
-          <a class="navbar-brand" href="#">Categories:</a>
-
-          <!-- Toggle button -->
           <button
-             class="navbar-toggler"
-             type="button"
-             data-mdb-toggle="collapse"
-             data-mdb-target="#navbarSupportedContent2"
-             aria-controls="navbarSupportedContent2"
-             aria-expanded="false"
-             aria-label="Toggle navigation">
+            class="navbar-toggler"
+            type="button"
+            (click)="basicNav.toggle()"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <i class="fas fa-bars"></i>
           </button>
+          <div
+            class="collapse navbar-collapse"
+            id="navbarNav"
+            mdbCollapse
+            #basicNav="mdbCollapse"
+          >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-          <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent2">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-              <!-- Link -->
-              <li class="nav-item acitve">
-                <button type="button" class="btn btn-tertiary" (click)="listAll()" mdbRipple>Todos</button>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-tertiary" (click)="listGenero('ROMANCE')" mdbRipple>Romance</button>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-tertiary" (click)="listGenero('FANTASIA')" mdbRipple>Fantasia</button>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-tertiary" (click)="listGenero('MISTERIO')" mdbRipple>Misterio</button>
-              </li>
-            </ul>
-
-
-
-
-
-
-
-            <button type="button" class="btn btn-primary" (click)="enviarLivro()" mdbRipple>Novo Livro</button>
-
-
-
-            <!-- Search -->
-
+            <!-- Link -->
+            <li class="nav-item acitve">
+              <button type="button" class="btn btn-tertiary" (click)="listAll()" mdbRipple>Todos</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-tertiary" (click)="listGenero('ROMANCE')" mdbRipple>Romance</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-tertiary" (click)="listGenero('FANTASIA')" mdbRipple>Fantasia</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-tertiary" (click)="listGenero('MISTERIO')" mdbRipple>Misterio</button>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-primary" (click)="enviarLivro()" mdbRipple>Novo Livro</button>
 
           </div>
         </div>
-        <!-- Container wrapper -->
       </nav>
-      <!-- Navbar -->
+      <!------------------------------------Navbar---------------------------------------------------->
 
-      <!-- Products -->
+
+
+      <!----------------------------------------------------Products--------------------------------------->
         <section>
         <div class="text-center">
           <div class="row">
@@ -77,7 +67,7 @@
 
           @for (livro of livros; track $index) {
               <!-- Card 1 -->
-            <div class="col-md-6 col-lg-4 mb-4">
+            <div class="col-md-6 col-lg-3 mb-4">
               <div class="card custom-card">
 
                 <span class="badge badge-primary">
@@ -88,12 +78,14 @@
                     {{livro.titulo}}</a>
 
 
-                    
+                    <div class="card-footer text-muted">{{livro.autor.nome}}</div>
+
                 </div>
 
               </div>
             </div>
           }
+      <!------------------------------------Products---------------------------------------------------->
 
 
     
@@ -164,6 +156,11 @@
                     <div class="mb-3">
                       <label for="valor" class="form-label">Valor R$</label>
                       <input type="text" id="valor" class="form-control" [(ngModel)]="livrosEdit.valor" name="genero" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="autor.id" class="form-label">Autor</label>
+                      <input type="text" id="autor.id" class="form-control" [(ngModel)]="livrosEdit.autor.id" name="autor.id" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Salvar</button>

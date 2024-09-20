@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';  // Importar CommonModule para n
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { Autor } from '../../models/Autor';
 
 
 
@@ -30,7 +31,7 @@ export class ConteudoComponent {
 
 
   livros: Livros[]=[];
-  livrosEdit: Livros = new Livros(0,"","","","","","");
+  livrosEdit: Livros = new Livros(0,"","","","","","", new Autor(0));
 
   livrosService = inject(LivrosServiceService);//@Autowired
 
