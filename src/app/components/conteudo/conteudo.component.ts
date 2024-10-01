@@ -8,6 +8,11 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { Autor } from '../../models/Autor';
+import { AutoresComponent } from "../autores/autores.component";
+import { AutorService } from '../../service/autor.service';
+import { ChangeDetectorRef } from '@angular/core';
+
+
 
 
 
@@ -17,12 +22,14 @@ import { Autor } from '../../models/Autor';
 @Component({
   selector: 'app-conteudo',
   standalone: true,
-  imports: [HttpClientModule,FormsModule,CommonModule ,MdbCollapseModule,MdbFormsModule,MdbCarouselModule],
+  imports: [HttpClientModule, FormsModule, CommonModule, MdbCollapseModule, MdbFormsModule,  MdbCarouselModule, AutoresComponent],
   templateUrl: './conteudo.component.html',
   styleUrl: './conteudo.component.scss'
 })
 export class ConteudoComponent {
 
+  autors: Autor[]=[];
+  autorsEdit: Autor = new Autor(0,"","",[])
 
 
   selectedBook: any = null; // Livro selecionado para mostrar detalhes
@@ -31,11 +38,13 @@ export class ConteudoComponent {
 
 
   livros: Livros[]=[];
-  livrosEdit: Livros = new Livros(0,"","","","","","", new Autor(0));
+  livrosEdit: Livros = new Livros(0,"","","","","","", new Autor(0,"","",[]));
 
   livrosService = inject(LivrosServiceService);//@Autowired
+  autorService = inject(AutorService);//@Autowired
 
-  constructor(){
+
+  constructor(private cdr: ChangeDetectorRef){
 
     this.listAll();
 
@@ -53,6 +62,10 @@ export class ConteudoComponent {
        let indice = this.livros.findIndex(x => {return x.id == livroEditado.id});
        this.livros[ indice ] = livroEditado;
      }
+
+     this.livrosService.livros$.subscribe((livros) => {
+      this.livros = livros; // Atualiza a lista de livros com os livros do autor
+  });
 
    }
 
@@ -117,10 +130,26 @@ showBookDetails(livroId: number) {
 closeBookDetails() {
   this.selectedBook = null;
 }
+
+
+  listarLivrosPorAutor(nome: string) {
+    this.autorService.listAll().subscribe({
+        next: (autores: Autor[]) => {
+            const autorSelecionado = autores.find(autor => autor.nome === nome);
+            if (autorSelecionado) {
+                this.livros = autorSelecionado.livros; // Atualiza a lista de livros
+                this.livrosService.setLivros(this.livros); // Atualiza o BehaviorSubject
+                console.log("Livros recebidos:", this.livros);
+            } else {
+                console.error("Autor não encontrado");
+            }
+        },
+        error: (err) => {
+            console.error("Erro ao listar autores:", err);
+        }
+    });
+  }
 }
-
-
-
 
 
 

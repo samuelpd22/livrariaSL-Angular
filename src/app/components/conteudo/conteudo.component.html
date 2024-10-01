@@ -1,3 +1,7 @@
+<br>
+
+<app-autores (autorSelecionado)="listarLivrosPorAutor($event)"></app-autores>
+
 
 <br>
 
@@ -58,33 +62,28 @@
 
 
       <!----------------------------------------------------Products--------------------------------------->
-        <section>
+      <section>
         <div class="text-center">
-          <div class="row">
+            <div class="row">
+                <div *ngFor="let livro of livros" class="col-md-6 col-lg-3 mb-4">
+                    <div class="card custom-card">
+                        <span class="badge badge-primary">
+                            <img src="{{livro.imagemUrl}}" class="card-img-top" alt="{{livro.titulo}}" />
+                        </span>
+                        <div class="card-body">
+                            <a href="javascript:void(0)" class="card-link" (click)="showBookDetails(livro.id)">
+                                {{livro.titulo}}
 
+                               <!-- <div class="card-footer text-muted">{{livro.autor.nome}}</div>-->
 
-
-
-          @for (livro of livros; track $index) {
-              <!-- Card 1 -->
-            <div class="col-md-6 col-lg-3 mb-4">
-              <div class="card custom-card">
-
-                <span class="badge badge-primary">
-                  <img src="{{livro.imagemUrl}}" class="card-img-top" alt="{{livro.titulo}}"/>
-                </span>
-                <div class="card-body">
-                  <a href="#" class="card-link" (click)="showBookDetails(livro.id)">
-                    {{livro.titulo}}</a>
-
-
-                    <div class="card-footer text-muted">{{livro.autor.nome}}</div>
-
+                            </a>
+                        </div>
+                    </div>
                 </div>
-
-              </div>
             </div>
-          }
+        </div>
+    </section>
+    
       <!------------------------------------Products---------------------------------------------------->
 
 
@@ -108,11 +107,12 @@
               </div>
               <div class="card-footer bg-light">
                 <a href="{{selectedBook.linkLivro}}" target="_blank">
-                  <p>Adquira                 <span><i class="fas fa-shopping-cart"></i></span>
+                  <br>
+                  <p >Adquira                 <span><i class="fas fa-shopping-cart"></i></span>
                   </p>
+                  
                 </a>
-                {{selectedBook.valor}}
-
+                
               </div>
             </div>
           </div>
@@ -167,12 +167,18 @@
                     <button type="button" class="btn btn-secondary" (click)="showForm = false">Cancelar</button>
                   </form>
                 </div>
+
+                <br>
+
               </div>
             </div>
           </div>
           <!--------------------------------Formulário para adicionar novo livro------------------------------------------------------------->
 
+          
           </div>
+         
 
     </div>
+
 

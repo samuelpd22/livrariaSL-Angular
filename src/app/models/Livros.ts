@@ -9,7 +9,8 @@ export class Livros {
   valor!:string;
   linkLivro!:string;
   genero!:string;
-  autor!:Autor;
+  autor: Autor = new Autor(0, "", "", [])
+
 
 
 

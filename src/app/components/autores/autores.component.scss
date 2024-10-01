@@ -1,0 +1,89 @@
+.custom-card {
+    height: 190px;
+    width: 90vw; /* Largura desejada do card */
+    margin: auto; /* Centraliza o card na coluna */
+    background-color: #46474710;
+    cursor: default; /* Cursor padrão sobre o card */
+
+  }
+  
+  .round-img {
+    border-radius: 50%; /* Torna a imagem redonda */
+    width: 130px; /* Tamanho da imagem */
+    height: 150px; /* Tamanho da imagem */
+    object-fit: cover; /* Mantém a proporção da imagem */
+    margin: 0 5px; /* Espaçamento entre as imagens (horizontal) */
+  }
+
+  .img-container {
+    display: flex; /* Usa flexbox para alinhar as imagens lado a lado */
+    justify-content: center; /* Centraliza as imagens no card */
+  }
+
+  h5{
+    color: rgb(95, 69, 34);
+    font-size: 15px;
+    padding-top: 3px;
+  }
+
+  .img-wrapper a {
+    flex: 0 0 auto; /* Evita que os itens encolham */
+    margin: 0 5px; /* Espaçamento entre as imagens */
+    cursor: pointer; /* Cursor de mão apenas nas imagens e títulos */
+    display: flex; /* Flex para centralizar imagem e texto */
+    flex-direction: column; /* Empilha a imagem e o título */
+    align-items: center; /* Centraliza horizontalmente */
+}
+.custom-card {
+    height: 190px;
+    width: 90vw; /* Largura desejada do card */
+    margin: auto; /* Centraliza o card na coluna */
+    align-items: center;
+    display: flex;
+    background-color: #46474710;
+    cursor: default; /* Cursor padrão sobre o card */
+
+  }
+  
+  .round-img {
+    border-radius: 50%; /* Torna a imagem redonda */
+    width: 130px; /* Tamanho reduzido da imagem para melhor visualização */
+    height: 150px; /* Tamanho reduzido da imagem */
+    object-fit: cover; /* Mantém a proporção da imagem */
+    margin: 0 5px; /* Espaçamento entre as imagens (horizontal) */
+  }
+
+  .img-container {
+    display: flex; /* Usa flexbox para alinhar as imagens lado a lado */
+    justify-content: center; /* Centraliza as imagens no card */
+  }
+
+  h5{
+    color: rgb(95, 69, 34);
+    font-size: 15px;
+    padding-top: 3px;
+  }
+
+  .img-wrapper a {
+    flex: 0 0 auto; /* Evita que os itens encolham */
+    margin: 0 5px; /* Espaçamento entre as imagens */
+    cursor: pointer; /* Cursor de mão apenas nas imagens e títulos */
+    display: flex; /* Flex para centralizar imagem e texto */
+    flex-direction: column; /* Empilha a imagem e o título */
+    align-items: center; /* Centraliza horizontalmente */
+    
+}
+
+.scrollable {
+    display: flex; /* Flexbox para alinhar os itens lado a lado */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    padding: 10px 0; /* Adiciona um pouco de espaço acima e abaixo */
+}
+
+img:hover{
+  transform: scale(1.05); /* Aumenta o tamanho do card */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao card */
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transição suave */
+
+
+}

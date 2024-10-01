@@ -1,7 +1,8 @@
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Livros } from '../models/Livros';
 import { HttpClient } from '@angular/common/http';
+import { Autor } from '../models/Autor';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,8 @@ export class LivrosServiceService {
    http = inject(HttpClient); //FAZ REQUISIÇÕES
 
    API = "http://localhost:8080/livros";
+
+   APIAuth = "http://localhost:8080/autor";
 
 
 
@@ -33,6 +36,16 @@ export class LivrosServiceService {
      return this.http.post<string>(this.API+"/enviar", livro  ,{ responseType: 'text' as 'json'})//Retorno string? Sempre usar responseType
 
    }
+
+   //armazena livro clicado
+
+   private livrosSubject = new BehaviorSubject<Livros[]>([]);
+    livros$ = this.livrosSubject.asObservable();
+
+    setLivros(livros: Livros[]) {
+        this.livrosSubject.next(livros);
+    }
+
 
 
 }
