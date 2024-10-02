@@ -12,7 +12,7 @@ export class AutorService {
  //@Autowired
  http = inject(HttpClient); //FAZ REQUISIÇÕES
 
- API = "http://localhost:8080/autor";
+ API = "https://backend-livrariasl.onrender.com/autor";
 
 
 

@@ -31,7 +31,7 @@ export class ConteudoComponent {
   autors: Autor[]=[];
   autorsEdit: Autor = new Autor(0,"","",[])
 
-
+  
   selectedBook: any = null; // Livro selecionado para mostrar detalhes
 
   showForm = false; // Controle do formulário para adicionar livro
