@@ -13,6 +13,7 @@ export class AutorService {
  http = inject(HttpClient); //FAZ REQUISIÇÕES
 
  API = "https://backend-livrariasl.onrender.com/autor";
+ //API = "http://localhost:8080/autor";
 
 
 

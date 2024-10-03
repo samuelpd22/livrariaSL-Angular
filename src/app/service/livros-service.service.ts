@@ -13,8 +13,11 @@ export class LivrosServiceService {
    http = inject(HttpClient); //FAZ REQUISIÇÕES
 
    API = "https://backend-livrariasl.onrender.com/livros";
+   //API = "http://localhost:8080/livros";
 
+   
    APIAuth = "https://backend-livrariasl.onrender.com/autor";
+   //APIAuth = "http://localhost:8080/autor";
 
 
 
