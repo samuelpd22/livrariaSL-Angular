@@ -123,6 +123,8 @@ h5{
   height: auto; /* Permite que o container se ajuste conforme o conteúdo */
   min-width: 300px; /* Define uma largura mínima para evitar que o card fique muito pequeno */
   box-sizing: border-box;
+
+ 
 }
 
 
@@ -156,3 +158,19 @@ h5{
   text-align: center;
 }
 
+.container-autores {
+  max-width: 90vw; /* Ajuste conforme necessário */
+  height: auto; /* Permite que a altura se ajuste conforme o conteúdo */
+  max-height: 400px; /* Altura máxima para mostrar a rolagem */
+  overflow-y: initial; /* Remove a rolagem inicialmente */
+  margin: 0 auto; /* Centraliza a div na página */
+  padding: 1rem; /* Espaçamento interno opcional */
+  background-color: #f9f9f900; /* Cor de fundo opcional */
+}
+
+/* Ativa a rolagem quando a largura da tela é menor que 768px */
+@media (max-width: 768px) {
+  .container-autores {
+      overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+  }
+}

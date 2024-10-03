@@ -1,7 +1,9 @@
 <br>
 
-<app-autores (autorSelecionado)="listarLivrosPorAutor($event)"></app-autores>
+  <app-autores (autorSelecionado)="listarLivrosPorAutor($event)"></app-autores>
+        
 
+ 
 
 <br>
 
@@ -91,39 +93,36 @@
 
     
          <!-- -------------------------------APARECE APENAS SE CLICAR NO LIVRO-------------------------------------------->
-         <section>
-          <div class="text-center">
-              <div class="row">
-                <div *ngIf="selectedBook" class="overlay">
-                  <!-- Container branco maior para o card de detalhes -->
-                  <div class="details-container">
-                    <!-- Ícone de fechar no topo direito -->
-                    <button type="button" class="btn-close" (click)="closeBookDetails()" aria-label="Fechar"></button>
-                    
-                    <div class="card">
-                      <!-- Card content -->
-                      <div class="card-body">
+         
+         
+              <div *ngIf="selectedBook" class="overlay">
+                <!-- Container branco maior para o card de detalhes -->
+                <div class="details-container">
+                  <!-- Ícone de fechar no topo direito -->
+                  <button type="button" class="btn-close" (click)="closeBookDetails()" aria-label="Fechar"></button>
+                  
+                  <div class="card">
+                    <!-- Card content -->
+                    <div class="card-body">
 
+                      
+                      <h5 class="custom-title">{{selectedBook.titulo}}</h5>
+                      <p>Sinopse</p>
+                      <p>{{selectedBook.sinopse}}</p>
+                    </div>
+                    <div class="card-footer bg-light">
+                      <a href="{{selectedBook.linkLivro}}" target="_blank">
+                        <br>
+                        <p >Adquira                 <span><i class="fas fa-shopping-cart"></i></span>
+                        </p>
                         
-                        <h5 class="custom-title">{{selectedBook.titulo}}</h5>
-                        <p>Sinopse</p>
-                        <p>{{selectedBook.sinopse}}</p>
-                      </div>
-                      <div class="card-footer bg-light">
-                        <a href="{{selectedBook.linkLivro}}" target="_blank">
-                          <br>
-                          <p >Adquira                 <span><i class="fas fa-shopping-cart"></i></span>
-                          </p>
-                          
-                        </a>
-                        
-                      </div>
+                      </a>
+                      
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+           
 
          <!-- -------------------------------APARECE APENAS SE CLICAR NO LIVRO-------------------------------------------->
 

@@ -1,89 +1,46 @@
-.custom-card {
-    height: 190px;
-    width: 90vw; /* Largura desejada do card */
-    margin: auto; /* Centraliza o card na coluna */
-    background-color: #46474710;
-    cursor: default; /* Cursor padrão sobre o card */
-
-  }
-  
-  .round-img {
-    border-radius: 50%; /* Torna a imagem redonda */
-    width: 130px; /* Tamanho da imagem */
-    height: 150px; /* Tamanho da imagem */
-    object-fit: cover; /* Mantém a proporção da imagem */
-    margin: 0 5px; /* Espaçamento entre as imagens (horizontal) */
-  }
-
-  .img-container {
-    display: flex; /* Usa flexbox para alinhar as imagens lado a lado */
-    justify-content: center; /* Centraliza as imagens no card */
-  }
-
-  h5{
-    color: rgb(95, 69, 34);
-    font-size: 15px;
-    padding-top: 3px;
-  }
-
-  .img-wrapper a {
-    flex: 0 0 auto; /* Evita que os itens encolham */
-    margin: 0 5px; /* Espaçamento entre as imagens */
-    cursor: pointer; /* Cursor de mão apenas nas imagens e títulos */
-    display: flex; /* Flex para centralizar imagem e texto */
-    flex-direction: column; /* Empilha a imagem e o título */
-    align-items: center; /* Centraliza horizontalmente */
-}
-.custom-card {
-    height: 190px;
-    width: 90vw; /* Largura desejada do card */
-    margin: auto; /* Centraliza o card na coluna */
-    align-items: center;
-    display: flex;
-    background-color: #46474710;
-    cursor: default; /* Cursor padrão sobre o card */
-
-  }
-  
-  .round-img {
-    border-radius: 50%; /* Torna a imagem redonda */
-    width: 130px; /* Tamanho reduzido da imagem para melhor visualização */
-    height: 150px; /* Tamanho reduzido da imagem */
-    object-fit: cover; /* Mantém a proporção da imagem */
-    margin: 0 5px; /* Espaçamento entre as imagens (horizontal) */
-  }
-
-  .img-container {
-    display: flex; /* Usa flexbox para alinhar as imagens lado a lado */
-    justify-content: center; /* Centraliza as imagens no card */
-  }
-
-  h5{
-    color: rgb(95, 69, 34);
-    font-size: 15px;
-    padding-top: 3px;
-  }
-
-  .img-wrapper a {
-    flex: 0 0 auto; /* Evita que os itens encolham */
-    margin: 0 5px; /* Espaçamento entre as imagens */
-    cursor: pointer; /* Cursor de mão apenas nas imagens e títulos */
-    display: flex; /* Flex para centralizar imagem e texto */
-    flex-direction: column; /* Empilha a imagem e o título */
-    align-items: center; /* Centraliza horizontalmente */
-    
+.container-autores {
+  max-width: 100%; /* Garante que o container não exceda a largura da tela */
+  height: auto; /* Altura automática */
+  max-height: 400px; /* Altura máxima se necessário */
+  overflow-x: auto; /* Permite rolagem horizontal */
+  overflow-y: hidden; /* Oculta a rolagem vertical */
+  margin: 0 auto; /* Centraliza a div na página */
+  padding: 1rem; /* Espaçamento interno opcional */
+  background-color: #f9f9f900; /* Cor de fundo opcional */
 }
 
-.scrollable {
-    display: flex; /* Flexbox para alinhar os itens lado a lado */
-    overflow-x: auto; /* Permite rolagem horizontal */
-    padding: 10px 0; /* Adiciona um pouco de espaço acima e abaixo */
+.img-container {
+  display: flex; /* Usa flexbox para alinhar as imagens lado a lado */
+  justify-content: center; /* Centraliza as imagens no contêiner */
+  flex-wrap: nowrap; /* Garante que todos os itens fiquem em uma linha */
+  padding-left: 20px; /* Adiciona espaçamento à esquerda */
 }
 
-img:hover{
+.img-wrapper {
+  display: flex; /* Flex para centralizar imagem e texto */
+  flex-direction: column; /* Empilha a imagem e o título */
+  align-items: center; /* Centraliza horizontalmente */
+  margin: 0 5px; /* Reduz o espaço entre as imagens */
+  flex-basis: auto; /* Permite que o item ocupe apenas o espaço necessário */
+  width: 100px; /* Largura fixa para cada autor, ajuste conforme necessário */
+}
+
+.round-img {
+  border-radius: 50%; /* Mantém a imagem redonda */
+  width: 100px; /* Tamanho da imagem reduzido */
+  height: 100px; /* Tamanho da imagem reduzido */
+  object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+h5 {
+  color: rgb(95, 69, 34);
+  font-size: 12px; /* Tamanho da fonte reduzido */
+  padding-top: 3px;
+  text-align: center; /* Centraliza o texto */
+}
+
+img:hover {
   transform: scale(1.05); /* Aumenta o tamanho do card */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao card */
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transição suave */
-
-
 }

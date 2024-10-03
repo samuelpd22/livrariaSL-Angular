@@ -1,20 +1,10 @@
-<div class="container">
-    <div class="row no-gutters">
-        <div class="col-md-3">
-            <div class="card custom-card">
-                <div class="bg-image hover-overlay" mdbRipple rippleColor="light">
-                    <div class="img-container">
-                        <div class="scrollable">
-                            <div *ngFor="let autor of autors" class="img-wrapper">
-                                <a href="javascript:void(0);" (click)="mostrarLivros(autor.nome)">
-                                    <img [src]="autor.imageAutorUrl || 'default-image-url.jpg'" class="round-img" alt="{{ autor.nome }}" />
-                                    <h5 class="card-title text-center" >{{ autor.nome }}</h5> <!-- Adicionado operador de coalescência nula -->
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container-autores">
+    <div class="row no-gutters img-container">
+        <div *ngFor="let autor of autors" class="img-wrapper col-md-3">
+            <a href="javascript:void(0);" (click)="mostrarLivros(autor.nome)">
+                <img [src]="autor.imageAutorUrl || 'default-image-url.jpg'" class="round-img" alt="{{ autor.nome }}" />
+                <h5 class="card-title text-center">{{ autor.nome }}</h5>
+            </a>
         </div>
     </div>
 </div>
