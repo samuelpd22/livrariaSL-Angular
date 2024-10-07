@@ -3,7 +3,8 @@
   max-width: 800px; /* Ajuste o valor conforme necessário */
   margin: 0 auto;   /* Centraliza o container horizontalmente */
 }
-h5{
+
+h5 {
   text-align: center;
   align-items: center;
 }
@@ -12,40 +13,22 @@ h5{
 .card {
   border: 1px solid #ddd; /* Adiciona uma borda leve aos cards */
   border-radius: 0.25rem; /* Ajusta o arredondamento dos cantos */
-  max-width: 470px;
-
+  max-width: 470px; /* Largura máxima do card */
 }
 
 /* Ajuste o tamanho da imagem do card */
 .card-img-top {
   height: 300px; /* Ajuste a altura conforme necessário */
-  object-fit: scale-down ; /* Garante que a imagem cubra o card sem distorção */
-  background-color: rgba(102, 98, 98, 0);//ALTERA FUNDO DO CARD -IMG
+  object-fit: scale-down; /* Garante que a imagem cubra o card sem distorção */
+  background-color: rgba(102, 98, 98, 0); /* Altera fundo do card - imagem */
 }
 
-/*.card-img-top {
-  width: 100%;
-  height: auto;
-
-}*/
-
 .custom-card {
-  
   max-width: 200px; /* Ajuste o valor conforme necessário */
   margin: 0 auto; /* Centraliza o card */
   margin-bottom: 20px;
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transição suave */
-
-
-
-
 }
-
-
-
-//
-
-/* conteudo.component.scss */
 
 /* Camada de sobreposição */
 .overlay {
@@ -76,21 +59,16 @@ h5{
   margin-right: 10px;
 }
 
-
-.container{
+.container {
   background-color: rgba(26, 24, 24, 0.034);
-
 }
-
-//
 
 .custom-card:hover {
   transform: scale(1.05); /* Aumenta o tamanho do card */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao card */
 }
 
-// BOTÃO DA CATEGORIA
-
+/* BOTÃO DA CATEGORIA */
 .nav-item button {
   background-color: #f8f9fa00; /* Alterar para a cor de fundo desejada */
   color: #ffffffdc; /* Alterar para a cor do texto desejada */
@@ -100,17 +78,9 @@ h5{
   margin-left: 20px;
 }
 
-
-
 .nav-item button:focus {
   outline: none; /* Remover o contorno ao focar */
 }
-
-// container ao clicar no livro
-
-
-/* Overlay para escurecer o fundo *//* Overlay para escurecer o fundo */
-
 
 /* Container branco maior */
 .details-container {
@@ -121,25 +91,25 @@ h5{
   padding: 2rem; /* Maior espaço interno */
   max-width: 100%;
   height: auto; /* Permite que o container se ajuste conforme o conteúdo */
-  min-width: 300px; /* Define uma largura mínima para evitar que o card fique muito pequeno */
+  min-width: 300px; /* Define uma largura mínima */
+  min-height: 200px;
   box-sizing: border-box;
-
- 
 }
-
 
 /* Ícone de fechar no topo direito */
 .btn-close {
   position: absolute;
-  top: 1rem; /* Ajuste conforme necessário */
-  right: 0.5rem; /* Ajuste conforme necessário */
+  top: 2.1rem; /* Ajuste a posição se necessário */
+  right: 2.2rem; /* Mantenha a posição à direita */
+  z-index: 1100; /* Garante que o botão de fechar fique acima do container */
   border: none;
-  font-size: 0.2; /* Ajuste o tamanho do ícone conforme necessário */
+  font-size: 20px; /* Ajuste o tamanho do ícone conforme necessário */
   cursor: pointer;
   color: #000000bd; /* Cor do ícone */
+  
 }
 
-// Cor do titulo 
+/* Cor do título */
 .custom-title {
   color: #55381dc2; /* Cor personalizada do texto */
   font-weight: bold; /* Peso da fonte */
@@ -147,10 +117,6 @@ h5{
   padding-bottom: 0.5rem; /* Espaçamento entre o texto e a linha */
   margin-bottom: 0.5rem; /* Espaçamento entre a linha e o próximo elemento */
 }
-
-
-
-
 
 .card-footer {
   font-size: 13px;
@@ -171,6 +137,31 @@ h5{
 /* Ativa a rolagem quando a largura da tela é menor que 768px */
 @media (max-width: 768px) {
   .container-autores {
-      overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+  }
+
+  .details-container {
+    max-width: 80%; /* Ajusta a largura máxima para 90% da tela em dispositivos móveis */
+    padding: 1rem; /* Reduz o espaçamento interno */
+  }
+
+ 
+  .card {
+    font-size: 14px; /* Ajusta o tamanho da fonte se necessário */
+  }
+
+  .btn-close {
+    font-size: 15px; /* Tamanho maior para melhor visibilidade em telas menores */
+    top: 1.2rem; /* Ajuste a posição se necessário */
+    right: 1.2rem; /* Mantenha a posição à direita */
+    z-index: 1100; /* Garante que o botão de fechar fique acima do container */
+  }
+
+  .custom-title {
+    font-size: 18px; /* Ajusta o tamanho do título */
+  }
+
+  .card-footer {
+    font-size: 12px; /* Ajusta o tamanho da fonte do rodapé */
   }
 }

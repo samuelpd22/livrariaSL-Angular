@@ -149,6 +149,17 @@ closeBookDetails() {
         }
     });
   }
+
+  getIsMobile(): boolean {
+    return window.innerWidth <= 768; // Ajuste o valor se necessário
+  }
+
+  getTruncatedSinopse(sinopse: string): string {
+    if (this.getIsMobile() && sinopse.length > 900) {
+      return sinopse.substring(0, 900) + '...'; // Trunca a sinopse e adiciona "..."
+    }
+  return sinopse; // Retorna a sinopse completa se a tela não for pequena
+}
 }
 
 

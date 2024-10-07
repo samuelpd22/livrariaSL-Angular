@@ -53,6 +53,9 @@
             <li class="nav-item">
               <button type="button" class="btn btn-tertiary" (click)="listGenero('MISTERIO')" mdbRipple>Misterio</button>
             </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-tertiary" (click)="listGenero('DARKROMANCE')" mdbRipple>DARK ROMANCE</button>
+            </li>
           </ul>
           <!--
           <button type="button" class="btn btn-primary" (click)="enviarLivro()" mdbRipple>Novo Livro</button>
@@ -69,7 +72,7 @@
       <section>
         <div class="text-center">
             <div class="row">
-                <div *ngFor="let livro of livros" class="col-md-6 col-lg-3 mb-4">
+                <div *ngFor="let livro of livros" class="col-md-9 col-lg-3 mb-4">
                     <div class="card custom-card">
                         <span class="badge badge-primary">
                             <img src="{{livro.imagemUrl}}" class="card-img-top" alt="{{livro.titulo}}" />
@@ -95,34 +98,25 @@
          <!-- -------------------------------APARECE APENAS SE CLICAR NO LIVRO-------------------------------------------->
          
          
-              <div *ngIf="selectedBook" class="overlay">
-                <!-- Container branco maior para o card de detalhes -->
-                <div class="details-container">
-                  <!-- Ícone de fechar no topo direito -->
-                  <button type="button" class="btn-close" (click)="closeBookDetails()" aria-label="Fechar"></button>
-                  
-                  <div class="card">
-                    <!-- Card content -->
-                    <div class="card-body">
-
-                      
+         <div *ngIf="selectedBook" class="overlay">
+          <div class="details-container">
+              <button type="button" class="btn-close" (click)="closeBookDetails()" aria-label="Fechar"></button>
+              <div class="card">
+                  <div class="card-body">
                       <h5 class="custom-title">{{selectedBook.titulo}}</h5>
                       <p>Sinopse</p>
-                      <p>{{selectedBook.sinopse}}</p>
-                    </div>
-                    <div class="card-footer bg-light">
+                      <p>{{ getTruncatedSinopse(selectedBook.sinopse) }}</p>
+                  </div>
+                  <div class="card-footer bg-light">
                       <a href="{{selectedBook.linkLivro}}" target="_blank">
                         <br>
-                        <p >Adquira                 <span><i class="fas fa-shopping-cart"></i></span>
-                        </p>
-                        
+                          <p>Adquira <span><i class="fas fa-shopping-cart"></i></span></p>
                       </a>
-                      
-                    </div>
                   </div>
-                </div>
               </div>
-           
+          </div>
+      </div>
+      
 
          <!-- -------------------------------APARECE APENAS SE CLICAR NO LIVRO-------------------------------------------->
 

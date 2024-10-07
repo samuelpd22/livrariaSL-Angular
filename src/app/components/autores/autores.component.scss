@@ -7,6 +7,8 @@
   margin: 0 auto; /* Centraliza a div na página */
   padding: 1rem; /* Espaçamento interno opcional */
   background-color: #f9f9f900; /* Cor de fundo opcional */
+  position: relative; /* Permite que as setas se posicionem em relação a este contêiner */
+
 }
 
 .img-container {
@@ -44,3 +46,6 @@ img:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao card */
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transição suave */
 }
+
+.row{
+margin-left: 20px;}
