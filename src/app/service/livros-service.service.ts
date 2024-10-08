@@ -12,12 +12,12 @@ export class LivrosServiceService {
    //@Autowired
    http = inject(HttpClient); //FAZ REQUISIÇÕES
 
-   //API = "https://backend-livrariasl.onrender.com/livros";
-   API = "http://localhost:8080/livros";
+   API = "https://backend-livrariasl.onrender.com/livros";
+   //API = "http://localhost:8080/livros";
 
    
-   //APIAuth = "https://backend-livrariasl.onrender.com/autor";
-   APIAuth = "http://localhost:8080/autor";
+   APIAuth = "https://backend-livrariasl.onrender.com/autor";
+   //APIAuth = "http://localhost:8080/autor";
 
 
 
