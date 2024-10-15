@@ -1,27 +1,52 @@
-# LivrariaSl
+<h1 align="center">
+    <h2 align="center">Livraria Online</h2>
+    
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+<h1 align="center">
+     <img  src="public/gif.gif" >
+</h1>
 
-## Development server
+## [Live](https://livraria-sl-angular.vercel.app/)
+### ***Observação:***  O ***BACKEND*** está configurado para iniciar apenas após receber ***REQUEST's***, então e possivel que demore até **5 MINUTOS** para que os livros apareçam.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Link do [backend](https://github.com/samuelpd22/Backend-livrariaSL)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Indice
+- [Sobre](#-sobre)
+- [Tecnologias utilizadas](#-Tecnologias-utilizadas)
+- [Como baixar o projeto](#como-baixar-projeto)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## 📖 Sobre
+Projeto **Livraria Online** é uma **Home-Page** onde serão listados livros de ***acordo*** com a ***CATEGORIA*** selecionada ou de ***acordo*** com ***AUTOR*** selecionado.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## ⚡ Tecnologias utilizadas
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Projeto desenvolvido utilizando as seguintes tecnologias
+- [TypeScript](https://www.typescriptlang.org/)
+- [Angular 17+](https://angular.dev/)
+- [Mdbootstrap](https://mdbootstrap.com/) 
 
-## Further help
+## Como baixar projeto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    $ git clone https://github.com/samuelpd22/livrariaSL-Angular
+
+    $ cd livrariaSL-Angular
+
+    $ npm i
+
+
+#### 1 - Apos baixalo execute dentro de sua pasta
+
+    ng add mdb-angular-ui-kit
+
+### 2 - Pronto para ser iniciado
+
+    ng serve
+
+
+Desenvolvido 🤍 por Samuel Patrocinio Drumond.
