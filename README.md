@@ -7,7 +7,7 @@
      <img  src="public/gif.gif" >
 </h1>
 
-## [Live](https://livraria-sl-angular.vercel.app/)
+## [Ao vivo](https://livraria-sl-angular.vercel.app/)
 ### ***Observação:***  O ***BACKEND*** está configurado para iniciar apenas após receber ***REQUEST's***, então e possivel que demore até **5 MINUTOS** para que os livros apareçam.
 
 ### Link do [backend](https://github.com/samuelpd22/Backend-livrariaSL)
